@@ -20,7 +20,7 @@ const App = () => {
     firebase.auth().onAuthStateChanged(async (user) => {
       dispatch(setProgressVisibility(true))
 
-      if (user) {
+      if () {
         const userInfo = { uid: user.uid }
         userInfo.creationTime = user.metadata.creationTime
 
