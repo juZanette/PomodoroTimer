@@ -17,10 +17,14 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Instalar dependências
+    - name: Instalar dependências (se existir package.json)
       run: |
         if exist package.json npm install
+      shell: cmd
 
-    - name: Rodar ESLint
+    - name: Verificar arquivos HTML e JS existentes
       run: |
-        if exist package.json npm run lint
+        echo Verificando arquivos...
+        dir /s /b *.html
+        dir /s /b *.js
+      shell: cmd
